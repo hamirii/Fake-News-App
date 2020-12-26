@@ -38,7 +38,7 @@ function TopNavBar({navigation, state, scene}){
 );
 
   return(
-    <TabView
+    <TabView 
       renderTabBar={renderTabBar}
       navigationState={{ index, routes }}
       renderScene={renderScene}
