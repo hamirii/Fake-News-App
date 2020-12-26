@@ -1,7 +1,7 @@
 import { Appbar } from "react-native-paper";
 import * as React from "react";
 import { StyleSheet, Text, View, Button, Dimensions, StatusBar } from "react-native";
-import DailyTrivia from "../DailyTrivia";
+import Favourites from "../Favourites";
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import Header from '../components/Header';
 import AppBackground from '../AppBackground';

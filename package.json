@@ -15,9 +15,13 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
     "react-native-web": "~0.13.12",
     "redux": "^4.0.5",
+    "d3-shape": "*",
+    "prop-types": "*",
     "react-redux": "^7.2.1",
     "redux-thunk": "^2.3.0",
     "expo-constants": "~9.3.1",
+    "@shopify/restyle": "*",
+    "react-native-svg": "12.1.0",
     "@expo/vector-icons": "^10.0.0",
     "react-native-paper": "^4.0.1",
     "react-native-navbar": "^2.0.2",
@@ -33,11 +37,7 @@
     "react-native-safe-area-context": "3.1.9",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/material-top-tabs": "^5.2.16",
-    "@react-navigation/material-bottom-tabs": "^5.2.16",
-    "d3-shape": "*",
-    "react-native-svg": "12.1.0",
-    "prop-types": "*",
-    "@shopify/restyle": "*"
+    "@react-navigation/material-bottom-tabs": "^5.2.16"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0"

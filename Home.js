@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Button } from "react-native";
 import Constants from "expo-constants";
 import React, { useEffect, useState } from "react";
-import DailyTrivia from "./DailyTrivia"
+import Favourites from "./Favourites"
 import { Appbar } from "react-native-paper";
 import Header from "./components/Header";
 import TopNavBar from "./components/TopNavBar";
@@ -34,7 +34,7 @@ function Home({ navigation }) {
   return (
     <>
     <Header title={"Fake News"} trackback="no"/>
-    <TopNavBar state={state} scene={scene} />
+    <TopNavBar state={state} scene={scene} navigation={navigation} />
     </>
     
   );
