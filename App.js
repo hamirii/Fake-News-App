@@ -5,10 +5,9 @@ import Routes from "./Routes";
 import { Card } from "react-native-paper";
 import { NavigationContainer } from "@react-navigation/native";
 
+
 export default function App() {
   return (
-    <NavigationContainer>
-      <Routes />
-    </NavigationContainer>
+    <Routes />
   );
 }
