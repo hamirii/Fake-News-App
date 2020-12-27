@@ -1,3 +1,3 @@
-const AppBackground = '#fbf7f5';
+const AppBackground = "#fbf7f5";
 
 export default AppBackground;

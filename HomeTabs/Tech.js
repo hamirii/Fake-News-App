@@ -1,16 +1,36 @@
-import * as React from "react";
-import { StyleSheet, Text, View, Button, Dimensions, StatusBar } from "react-native";
-import AppBackground from '../AppBackground';
+import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  Dimensions,
+  StatusBar,
+} from "react-native";
+import AppBackground from "../AppBackground";
+import { createStackNavigator } from "@react-navigation/stack";
 
+const TechStack = createStackNavigator();
 
-const Tech = () => (
+const Tech = ({ route, navigation }) => (
   <View style={styles.container}>
     <Text> Tech Articles go here </Text>
   </View>
 );
 
+function TechScreen() {
+  return (
+    <TechStack.Navigator>
+      <TechStack.Screen
+        name="Tech"
+        component={Tech}
+        options={{ headerShown: false }}
+      />
+    </TechStack.Navigator>
+  );
+}
+
 const styles = StyleSheet.create({
-  
   container: {
     flex: 1,
     justifyContent: "center",
@@ -21,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Tech;
+export default TechScreen;

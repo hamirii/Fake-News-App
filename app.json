@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "fake-news-app",
-    "slug": "snack-6ced65da-5fa4-4d50-b9f6-25aed88c6c0f",
+    "slug": "snack-872fcff4-c1de-40d0-906f-0ce577768329",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,9 +13,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

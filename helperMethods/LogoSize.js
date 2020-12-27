@@ -11,31 +11,30 @@ function LogoSize(width, height) {
       var ratio = maxHeight / height;
       var w = Math.ceil(ratio * width);
       var ret = {
-        'width': w,
-        'height': maxHeight
+        width: w,
+        height: maxHeight,
       };
     } else {
       var ret = {
-        'width': maxWidth,
-        'height': h
+        width: maxWidth,
+        height: h,
       };
     }
-
   } else {
     var ratio = maxHeight / height;
     var w = Math.ceil(ratio * width);
 
     if (w > maxWidth) {
-    var ratio = maxWidth / width;
+      var ratio = maxWidth / width;
       var h = Math.ceil(ratio * height);
       var ret = {
-        'width': maxWidth,
-        'height': h
+        width: maxWidth,
+        height: h,
       };
     } else {
       var ret = {
-        'width': w,
-        'height': maxHeight
+        width: w,
+        height: maxHeight,
       };
     }
   }
