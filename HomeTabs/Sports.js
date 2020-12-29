@@ -32,6 +32,8 @@ const Sports = ({ route, navigation }) => (
       imageURI={
         "https://site-cdn.givemesport.com/images/20/08/29/3eaaeda130429fe4d4e74a34fbbe2291/320.jpg"
       }
+      imageLogo={require("../assets/BBC-logo.png")}
+      navigation={navigation}
     />
   </ScrollView>
 );

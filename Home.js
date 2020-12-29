@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, Button } from "react-native";
 import Constants from "expo-constants";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Favourites from "./Favourites";
+import { Appbar } from "react-native-paper";
 import Header from "./components/Header";
 import TopNavBar from "./components/TopNavBar";
 import AppBackground from "./AppBackground";

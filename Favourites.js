@@ -11,10 +11,7 @@ function Favourites({ navigation }) {
     <>
       <Header title={"Favourites"} trackback="yes" navigation={navigation} />
       <View style={{ flex: 1, backgroundColor: AppBackground }}>
-        <Button
-          onPress={() => navigation.navigate("ArticleWebView")}
-          title="Go Home"
-        />
+        <Button onPress={() => navigation.navigate("Home")} title="Go Home" />
       </View>
     </>
   );

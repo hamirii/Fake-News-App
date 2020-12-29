@@ -22,6 +22,7 @@ function Article({ headline, imageURI, imageLogo, navigation, url }) {
   Image.getSize(imageLogo, (height, width) => {
     theWidth = width;
   });
+
   return (
     <TouchableOpacity
       onPress={() => navigation.navigate("ArticleWebView", { url })}
@@ -57,7 +58,7 @@ function Article({ headline, imageURI, imageLogo, navigation, url }) {
               height: dims.height,
               width: dims.width,
             }}
-            source={imageLogo}
+            source={{ uri: imageLogo }}
           />
         </Card.Content>
         <Card.Content
