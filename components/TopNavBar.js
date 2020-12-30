@@ -31,7 +31,7 @@ function TopNavBar({ navigation }) {
     <Tab.Navigator
       tabBarOptions={{
         style: { backgroundColor: AppBackground },
-        scrollEnabled: "true",
+        scrollEnabled: true,
         tabStyle: { width: windowWidth * 0.25 },
         indicatorStyle: {
           backgroundColor: "red",
