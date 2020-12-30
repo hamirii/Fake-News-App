@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import Article from "../components/Article";
 import { createStackNavigator } from "@react-navigation/stack";
+import AppBackground from "../AppBackground";
 
 const LatestStack = createStackNavigator();
 const PoliticsStack = createStackNavigator();
@@ -18,17 +19,29 @@ function Latest({ route, navigation }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("https://fake-news-apii.herokuapp.com/latest")
+    fetch("https://fake-news-apii.herokuapp.com/apiLib")
       .then((response) => response.json())
       .then((items) => setData(items.articles))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }, []);
 
+  const latest = data.filter((item) => {
+    for (let index in data) {
+      if (item.category[index] == "latest") {
+        return item;
+      }
+    }
+  });
+
   return (
-    <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={{ flex: 1 }}
+      style={{ flex: 1, backgroundColor: AppBackground }}
+    >
       <FlatList
-        data={data}
+        data={latest}
         keyExtractor={({ headline }, index) => headline}
         renderItem={({ item }) => (
           <Article

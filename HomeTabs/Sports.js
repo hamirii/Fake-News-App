@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -7,6 +7,7 @@ import {
   Dimensions,
   StatusBar,
   ScrollView,
+  FlatList,
 } from "react-native";
 import AppBackground from "../AppBackground";
 import Article from "../components/Article";
@@ -14,29 +15,47 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 const SportsStack = createStackNavigator();
 
-const Sports = ({ route, navigation }) => (
-  <ScrollView showsVerticalScrollIndicator={false}>
-    <Article
-      headline={"Arsenal to win Premier League in shock Arsene Wenger comeback"}
-      imageURI={
-        "https://cdn.newsapi.com.au/image/v1/5ce735885933ff71f6943eb9b4b68c1c"
+function Sports({ route, navigation }) {
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fake-news-apii.herokuapp.com/apiLib")
+      .then((response) => response.json())
+      .then((items) => setData(items.articles))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+  }, []);
+
+  const sports = data.filter((item) => {
+    for (let index in data) {
+      if (item.category[index] == "sports") {
+        return item;
       }
-      imageLogo={require("../assets/BBC-logo.png")}
-      navigation={navigation}
-      url={"https://www.bbc.com/sport/football/55382725"}
-    />
-    <Article
-      headline={
-        "Lionel Messi joins Cristiano Ronaldo at Juventus, can only play each game with 5 men"
-      }
-      imageURI={
-        "https://site-cdn.givemesport.com/images/20/08/29/3eaaeda130429fe4d4e74a34fbbe2291/320.jpg"
-      }
-      imageLogo={require("../assets/BBC-logo.png")}
-      navigation={navigation}
-    />
-  </ScrollView>
-);
+    }
+  });
+
+  return (
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={{ flex: 1, backgroundColor: AppBackground }}
+    >
+      <FlatList
+        data={sports}
+        keyExtractor={({ headline }, index) => headline}
+        renderItem={({ item }) => (
+          <Article
+            headline={item.headline}
+            imageLogo={item.imageLogo}
+            imageURI={item.imageURI}
+            url={item.url}
+            navigation={navigation}
+          />
+        )}
+      />
+    </ScrollView>
+  );
+}
 
 function SportsScreen() {
   return (

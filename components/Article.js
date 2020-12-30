@@ -4,7 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
+  TouchableWithoutFeedback,
   Image,
   Dimensions,
   WebView,
@@ -24,7 +24,7 @@ function Article({ headline, imageURI, imageLogo, navigation, url }) {
   });
 
   return (
-    <TouchableOpacity
+    <TouchableWithoutFeedback
       onPress={() => navigation.navigate("ArticleWebView", { url })}
       style={{ flex: 1 }}
     >
@@ -72,7 +72,7 @@ function Article({ headline, imageURI, imageLogo, navigation, url }) {
           <Title>{headline}</Title>
         </Card.Content>
       </Card>
-    </TouchableOpacity>
+    </TouchableWithoutFeedback>
   );
 }
 
